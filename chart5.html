@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>EV Explorer | Data</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="node_modules/topojson-client/dist/topojson-client.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <!-- ========================== BODY =============================== -->
+  <!-- Top Nav bar -->
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand py-3 navbar-dark bg-success">
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="index.html">EV Explorer</a>
+      <!-- Sidebar Toggle-->
+      <button
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+        href="#!"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <!-- Left Side bar-->
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+          <div class="sb-sidenav-menu">
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading">Overview</div>
+              <a class="nav-link" href="page.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                Dashboard
+              </a>
+
+              <!-- Menu -->
+              <div class="sb-sidenav-menu-heading">Details</div>
+              <a class="nav-link" href="chart1.html">
+                <div class="sb-nav-link-icon">
+                  <i class="fas fa-chart-area"></i>
+                </div>
+                Bar Chart
+              </a>
+              <a class="nav-link" href="chart2.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Line Chart
+              </a>
+              <a class="nav-link" href="chart3.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Pie Chart
+              </a>
+              <a class="nav-link" href="chart4.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Histogram
+              </a>
+              <a class="nav-link" href="chart5.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Table
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- ================================================ -->
+      <!-- Main content -->
+      <!-- ================================================ -->
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Electric Vehicle Population</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">Detail</li>
+            </ol>
+
+            <!-- Chart row  -->
+            <div class="row">
+              <!-- =========== chart beginning ============== -->
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <!-- chart title  -->
+                  <div class="card-header">
+                    <!-- icon -->
+                    <i class="fas fa-chart-bar me-1"></i>
+                    <!-- title text -->
+                    Bar Chart Example
+                  </div>
+
+                  <!-- ========== EDIT CHART HERE ================== -->
+                  <div class="card-body">
+                    <!-- ### corresponding js file: 
+                      /js/g-bar.js
+                     ###  -->
+                    <svg id="barchartvv"></svg>
+                  </div>
+                  <!-- ============================ -->
+                </div>
+              </div>
+              <!-- Chart Description -->
+              <div class="col-xl-6 d-flex flex-column px-5">
+                <div class="row">
+                  <h2>Description</h2>
+                </div>
+                <div class="row">
+                  <p class="max-w-sm">
+                    This part is used for description. This part is used for
+                    description. This part is used for description. This part is
+                    used for description. Test Text here.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- =============== END MAIN CONTENT ======================= -->
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid px-4">
+            <div
+              class="d-flex align-items-center justify-content-between small"
+            >
+              <div class="text-muted">Copyright &copy; EV Explorer 2023</div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- ================================= -->
+    <script src="/js/scripts.js"></script>
+    <!--  ### FOR Chart change this file -->
+    <script src="/js/g-bar.js"></script>
+    <!-- ================================= -->
+  </body>
+</html>
