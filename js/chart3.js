@@ -1,5 +1,5 @@
 // Load the CSV data
-d3.csv("./data/cleaned_population.csv").then(function (data) {
+d3.csv("./data/EV_Population.csv").then(function (data) {
   // Extract the "Electric Vehicle Type" column for analysis
   var electricVehicleTypes = d3.group(data, (d) => d["Electric Vehicle Type"]);
 
