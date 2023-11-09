@@ -7,12 +7,12 @@
 // Scripts
 //
 
-document
-  .getElementById("getStartedButton")
-  .addEventListener("click", function () {
-    // Redirect to the desired page (page.html) using JavaScript
-    window.location.href = "page.html";
-  });
+// document
+//   .getElementById("getStartedButton")
+//   .addEventListener("click", function () {
+//     // Redirect to the desired page (page.html) using JavaScript
+//     window.location.href = "page.html";
+//   });
 
 window.addEventListener("DOMContentLoaded", (event) => {
   // Toggle the side navigation
