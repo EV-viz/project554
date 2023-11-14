@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EV Explorer | Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- MAP BOX  -->
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .mapbox_container {
+        position: relative;
+        height: 300px !important;
+        width: 500px !important;
+        display: inline-block;
+      }
+
+      #map3 {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
+    <script src="node_modules/topojson-client/dist/topojson-client.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      #herotitle {
+        padding-top: 250px;
+        padding-left: 100px;
+      }
+      #bgdiv {
+        background-image: url("public/image/p1-1.jpeg");
+        height: 800px;
+        min-width: 100%; /* Set the default min-width to 100% */
+        background-size: cover; /* Set object-fit: cover for the background image */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Landing page: image using picture as background  -->
+    <section class="m-0 p-0" id="bgdiv">
+      <!-- -->
+      <div id="herotitle">
+        <h1 class="display-2 fw-bold mx-4" id="title">EV Explorer</h1>
+        <h3 class="fw-semibold mx-4 text-muted" id="subtitle">
+          Sustainable Landscape
+        </h3>
+        <div class="d-grid mx-4 py-4 gap-2 d-md-flex justify-content-md-start">
+          <button
+            id="getStartedButton"
+            type="button"
+            class="btn btn-secondary btn-lg px-4 me-md-2"
+          >
+            Get Started
+          </button>
+          <script>
+            document
+              .getElementById("getStartedButton")
+              .addEventListener("click", function () {
+                // Redirect to the desired page (page.html) using JavaScript
+                window.location.href = "page.html";
+              });
+          </script>
+        </div>
+      </div>
+    </section>
+    <!-- section 2 -->
+    <div class="container col-xxl-8 px-4 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img
+            src="/public/image/p2.jpeg"
+            class="d-block mx-lg-auto img-fluid"
+            alt="EV picture"
+            width="700"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-lg-6">
+          <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3">
+            Embark on a journey into the dynamic realm of electric vehicles
+          </h2>
+          <p class="lead">
+            EV Explorer, your premier visualization web app for analyzing the
+            expansion and distribution of electric mobility. This cutting-edge
+            platform empowers users to delve into the nuances of the electric
+            vehicle landscape through immersive visualizations and illuminating
+            data analytics.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button
+              id="exploreButton"
+              type="button"
+              class="btn btn-primary btn-lg px-4 me-md-2"
+            >
+              Explore Dataset
+            </button>
+            <script>
+              document
+                .getElementById("exploreButton")
+                .addEventListener("click", function () {
+                  // Redirect to the desired page (page.html) using JavaScript
+                  window.location.href = "page.html";
+                });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section 3 -->
+    <div class="container justify-content-center mx-4 py-5 px-5">
+      <!-- https://www.google.com/maps/d/u/0/edit?mid=1TBmwLUY-qcM_sDC3kqcoYkKOwLI3fCE&usp=sharing -->
+      <h2 class="p-4">Geolocation</h2>
+
+      <!-- ============= MAP START============= -->
+      <div class="row p-4">
+        <section class="col mapbox_container">
+          <div id="map3"></div>
+        </section>
+
+        <script>
+          //mapboxgl.accessToken = 'YOUR_ACCESS_TOKEN';
+          mapboxgl.accessToken =
+            "pk.eyJ1Ijoibm9jZXJhIiwiYSI6ImNpbGk2bjNiMTJ2eXV2YW1jdjdweWFtbXoifQ.s6Om8LNYd93IpsgqUqpLzA";
+          var map = new mapboxgl.Map({
+            container: "map3", // container id
+            style: "mapbox://styles/mapbox/streets-v11", // style URL
+            center: [-121.9042972, 47.5913463], // starting position [lng, lat] 47.5913463,-121.9042972
+            zoom: 5, // starting zoom
+          });
+
+          map.on("load", function () {
+            map.addSource("footprints_source", {
+              type: "geojson",
+              data: "data/Building_Footprints.geojson",
+            });
+
+            map.addLayer({
+              id: "footprints",
+              type: "fill",
+              source: "footprints_source",
+              layout: {},
+              paint: {
+                "fill-color": "#eeeeee",
+                "fill-opacity": 0.8,
+              },
+            });
+          });
+
+          var marker = new mapboxgl.Marker()
+            .setLngLat([-121.9042972, 47.5913463])
+            .addTo(map);
+        </script>
+      </div>
+      <!-- ============= MAP END ============= -->
+    </div>
+    <!-- footer -->
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Map</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Dataset</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">
+          &copy; 2023 EV Explorer. All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>

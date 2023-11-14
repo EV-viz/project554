@@ -13,9 +13,11 @@ d3.csv("./data/EV_Population.csv").then(function (data) {
     percentage: (entries.length / totalCount) * 100,
   }));
 
-  // Create a pie chart using D3.js
-  var width = 600;
-  var height = 400;
+  // Get the parent element's width and adjust chart dimensions accordingly
+  var parentWidth =
+    document.getElementById("pie-chart").parentElement.clientWidth;
+  var width = parentWidth > 600 ? 600 : parentWidth;
+  var height = width * 0.67; // Maintain the aspect ratio
   var marginBottom = 60; // Increased margin for the legend
   var radius = Math.min(width, height) / 2;
 
@@ -68,7 +70,7 @@ d3.csv("./data/EV_Population.csv").then(function (data) {
   // Add a legend at the bottom of the pie
   var legend = svg
     .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + (height + 20) + ")"); // Adjust the legend position
+    .attr("transform", "translate(" + width / 8 + "," + (height + 20) + ")"); // Adjust the legend position
 
   legend
     .selectAll(".legend-item")
