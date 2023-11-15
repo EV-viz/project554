@@ -116,14 +116,14 @@
               <div class="col-xl-3 col-md-6">
                 <div class="card bg-success text-white mb-4">
                   <div class="card-body" id="card1">
-                    <h2 class="">153487</h2>
+                    <h2 class="">153K</h2>
                   </div>
                   <div
                     class="card-footer d-flex align-items-center justify-content-between"
                   >
-                    <a class="small text-white stretched-link" href="#"
-                      >Total Vehicles</a
-                    >
+                    <a class="small text-white stretched-link" href="#">
+                      Registered EVs
+                    </a>
                   </div>
                 </div>
               </div>
@@ -131,14 +131,14 @@
               <div class="col-xl-3 col-md-6">
                 <div class="card bg-warning text-white mb-4">
                   <div class="card-body" id="card2">
-                    <h2 class="">33%</h2>
+                    <h2 class="">5,963K</h2>
                   </div>
                   <div
                     class="card-footer d-flex align-items-center justify-content-between"
                   >
-                    <a class="small text-white stretched-link" href="#"
-                      >Proportion</a
-                    >
+                    <a class="small text-white stretched-link" href="#">
+                      Total(EV + Non-EV)
+                    </a>
                   </div>
                 </div>
               </div>
@@ -146,13 +146,13 @@
               <div class="col-xl-3 col-md-6">
                 <div class="card bg-primary text-white mb-4">
                   <div class="card-body" id="card3">
-                    <h2 class="">5438</h2>
+                    <h2 class="">2.5%</h2>
                   </div>
                   <div
                     class="card-footer d-flex align-items-center justify-content-between"
                   >
-                    <a class="small text-white stretched-link" href="#"
-                      >Locations
+                    <a class="small text-white stretched-link" href="#">
+                      EV Proportion
                     </a>
                     <div class="small text-white">
                       <i class="fas fa-angle-right"></i>
@@ -164,12 +164,14 @@
               <div class="col-xl-3 col-md-6">
                 <div class="card bg-danger text-white mb-4">
                   <div class="card-body" id="card4">
-                    <h2 class="">33</h2>
+                    <h2 class="">117K</h2>
                   </div>
                   <div
                     class="card-footer d-flex align-items-center justify-content-between"
                   >
-                    <a class="small text-white stretched-link" href="#">EV </a>
+                    <a class="small text-white stretched-link" href="#">
+                      Battery EVs
+                    </a>
                     <div class="small text-white">
                       <i class="fas fa-angle-right"></i>
                     </div>
@@ -177,14 +179,14 @@
                 </div>
               </div>
             </div>
-            <!-- Chart row  -->
+            <!-- Chart row 1 -->
             <div class="row">
               <!-- chart 1 -->
               <div class="col-xl-6">
                 <div class="card mb-4">
                   <div class="card-header">
                     <i class="fas fa-chart-area me-1"></i>
-                    Area Chart Example
+                    Data
                   </div>
                   <div class="card-body">
                     <canvas id="myAreaChart" width="100%" height="40"></canvas>
@@ -195,14 +197,42 @@
               <div class="col-xl-6">
                 <div class="card mb-4">
                   <div class="card-header">
-                    <i class="fas fa-chart-bar me-1"></i>
-                    Bar Chart Example
+                    <i class="fas fa-chart-pie me-1"></i>
+                    EV Types
                   </div>
                   <div class="card-body">
-                    <canvas id="myBarChart" width="100%" height="40"></canvas>
+                    <canvas id="myPieChart" width="100%" height="40"></canvas>
                   </div>
                 </div>
               </div>
+            </div>
+            <!-- chart row 2 -->
+            <div class="row">
+              <!-- chart 21 -->
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    Car Make Distribution
+                  </div>
+                  <div class="card-body">
+                    <canvas id="myBarChart" width="100%" height="50"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- chart 22 -->
+              <div class="col-xl-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    Car Make Proportion
+                  </div>
+                  <div class="card-body">
+                    <canvas id="myPieChart2" width="100%" height="50"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- end chart 1 -->
             </div>
           </div>
         </main>
@@ -221,7 +251,8 @@
     <script src="js/scripts.js"></script>
     <script src="js/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
-
+    <script src="assets/demo/chart-pie-demo.js"></script>
+    <script src="assets/demo/chart-pie-make.js"></script>
     <script src="js/datatables-simple-demo.js"></script>
   </body>
 </html>
