@@ -36,7 +36,7 @@ async function fetchDataBar() {
           xAxes: [
             {
               gridLines: {
-                display: false,
+                display: true,
               },
               ticks: {
                 maxTicksLimit: 12,
@@ -51,7 +51,7 @@ async function fetchDataBar() {
                 maxTicksLimit: 10,
               },
               gridLines: {
-                display: true,
+                display: false,
               },
             },
           ],

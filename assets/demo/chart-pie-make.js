@@ -9,8 +9,9 @@ async function fetchDataPie2() {
     "#ffc107",
     "#007bff",
     "#dc3545",
-    "darkblue",
-    "purple",
+
+    "gray",
+    "lightblue",
   ];
   const topCount = 6; // Define the number of top makes to display
 
