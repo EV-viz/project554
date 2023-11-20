@@ -31,7 +31,7 @@
     <style>
       .mapbox_container {
         position: relative;
-        height: 300px !important;
+        height: 600px !important;
         width: 500px !important;
         display: inline-block;
       }
@@ -134,47 +134,17 @@
     <!-- section 3 -->
     <div class="container justify-content-center mx-4 py-5 px-5">
       <!-- https://www.google.com/maps/d/u/0/edit?mid=1TBmwLUY-qcM_sDC3kqcoYkKOwLI3fCE&usp=sharing -->
-      <h2 class="p-4">Geolocation</h2>
+      <h2 class="px-4">Data Distribution</h2>
+      <p class="px-4">
+        Locations of Registered Vehicles in WA. Click on anyone to show county
+        name of the location.
+      </p>
 
       <!-- ============= MAP START============= -->
-      <div class="row p-4">
+      <div class="row px-2">
         <section class="col mapbox_container">
           <div id="map3"></div>
         </section>
-
-        <script>
-          //mapboxgl.accessToken = 'YOUR_ACCESS_TOKEN';
-          mapboxgl.accessToken =
-            "pk.eyJ1Ijoibm9jZXJhIiwiYSI6ImNpbGk2bjNiMTJ2eXV2YW1jdjdweWFtbXoifQ.s6Om8LNYd93IpsgqUqpLzA";
-          var map = new mapboxgl.Map({
-            container: "map3", // container id
-            style: "mapbox://styles/mapbox/streets-v11", // style URL
-            center: [-121.9042972, 47.5913463], // starting position [lng, lat] 47.5913463,-121.9042972
-            zoom: 5, // starting zoom
-          });
-
-          map.on("load", function () {
-            map.addSource("footprints_source", {
-              type: "geojson",
-              data: "data/Building_Footprints.geojson",
-            });
-
-            map.addLayer({
-              id: "footprints",
-              type: "fill",
-              source: "footprints_source",
-              layout: {},
-              paint: {
-                "fill-color": "#eeeeee",
-                "fill-opacity": 0.8,
-              },
-            });
-          });
-
-          var marker = new mapboxgl.Marker()
-            .setLngLat([-121.9042972, 47.5913463])
-            .addTo(map);
-        </script>
       </div>
       <!-- ============= MAP END ============= -->
     </div>
@@ -204,5 +174,6 @@
       </footer>
     </div>
     <script src="./js/scripts.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

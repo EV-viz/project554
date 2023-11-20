@@ -100,7 +100,7 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Electric Vehicle Population</h1>
+            <h1 class="mt-4">Electric Vehicle Electric Range Distribution</h1>
             <ol class="breadcrumb mb-4">
               <li class="breadcrumb-item active">Detail</li>
             </ol>
@@ -115,7 +115,7 @@
                     <!-- icon -->
                     <i class="fas fa-chart-bar me-1"></i>
                     <!-- title text -->
-                    Bar Chart Example
+                    Histogram
                   </div>
 
                   <!-- ========== EDIT CHART HERE ================== -->
@@ -123,7 +123,13 @@
                     <!-- ### corresponding js file: 
                       /js/g-bar.js
                      ###  -->
-                    <svg id="barchartvv"></svg>
+                    <svg id="histogramvv"></svg>
+
+                    <div>
+                      <button id="PHEVButton">PHEV</button>
+                      <button id="BEVButton">BEV</button>
+                      <button id="resetButton">Reset</button>
+                    </div>
                   </div>
                   <!-- ============================ -->
                 </div>
@@ -135,9 +141,8 @@
                 </div>
                 <div class="row">
                   <p class="max-w-sm">
-                    This part is used for description. This part is used for
-                    description. This part is used for description. This part is
-                    used for description. Test Text here.
+                    The Electric Range describes how far a vehicle can travel
+                    purely on its electric charge.
                   </p>
                 </div>
               </div>
@@ -159,7 +164,7 @@
     <!-- ================================= -->
     <script src="/js/scripts.js"></script>
     <!--  ### FOR Chart change this file -->
-    <script src="/js/g-bar.js"></script>
+    <script src="/js/g-histogram.js"></script>
     <!-- ================================= -->
   </body>
 </html>

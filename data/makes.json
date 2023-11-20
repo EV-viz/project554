@@ -1,12 +1,1 @@
-[
-  { "Make": "TESLA", "data": 69444 },
-  { "Make": "NISSAN", "data": 13633 },
-  { "Make": "CHEVROLET", "data": 12217 },
-  { "Make": "FORD", "data": 7796 },
-  { "Make": "BMW", "data": 6606 },
-  { "Make": "KIA", "data": 6522 },
-  { "Make": "TOYOTA", "data": 5359 },
-  { "Make": "VOLKSWAGEN", "data": 4228 },
-  { "Make": "VOLVO", "data": 3658 },
-  { "Make": "JEEP", "data": 3460 }
-]
+[{"Make":"TESLA","data":69444},{"Make":"NISSAN","data":13633},{"Make":"CHEVROLET","data":12217},{"Make":"FORD","data":7796},{"Make":"BMW","data":6606},{"Make":"KIA","data":6522},{"Make":"TOYOTA","data":5359},{"Make":"VOLKSWAGEN","data":4228},{"Make":"VOLVO","data":3658},{"Make":"JEEP","data":3460}]
