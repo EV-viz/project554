@@ -1,34 +1,40 @@
-// Create an SVG container
+Promise.all([
+  d3.json(
+    "/data/united_states_washington_administrative_boundaries_level6_counties_polygon.geojson"
+  ),
+  d3.csv("/data/test.csv"),
+]).then(([data, csvData]) => {
+  // Initialize D3 projection
+  const projection = d3
+    .geoMercator()
+    .center([-120.7401, 47.7511]) // Centered on Washington state
+    .scale(5000)
+    .translate([480, 300]); // SVG width and height / 2
 
-// Load both files using Promise.all
-const washingtonGeoJSONPath =
-  "/data/united_states_washington_administrative_boundaries_level6_counties_polygon.geojson";
-const pointsDataPath = "/data/test.json";
+  // Create the path generator
+  const path = d3.geoPath().projection(projection);
 
-Promise.all([d3.json(washingtonGeoJSONPath), d3.json(pointsDataPath)]).then(
-  function ([geojsonData, jsonData]) {
-    const svg = d3
-      .select("#map-container")
-      .append("svg")
-      .attr("width", 960) // Adjust the width as needed
-      .attr("height", 600); // Adjust the height as needed
-    // Create a Mercator projection centered on Washington state
-    const projection = d3
-      .geoMercator()
-      .center([-120.7401, 47.7511]) // Centered on Washington state
-      .scale(5000) // Adjust the scale as needed
-      .translate([480, 300]);
+  // Append an SVG element to the body
+  const svg = d3.select("#map");
 
-    // Create a path generator using the projection
-    const path = d3.geoPath().projection(projection);
+  // Append path for the map background
+  svg
+    .append("path")
+    .datum(data)
+    .attr("d", path)
+    .style("fill", "white") // Set the fill color for the map background
+    .style("stroke", "black")
+    .style("stroke-width", "1px");
 
-    // Append the GeoJSON data to the SVG as paths
-    svg
-      .selectAll("path")
-      .data(geojsonData.features)
-      .enter()
-      .append("path")
-      .attr("d", path)
-      .style("fill", "none"); // Adjust the map's fill color
-  }
-);
+  // Append paths for county boundaries
+  svg
+    .selectAll(".boundary")
+    .data(data.features)
+    .enter()
+    .append("path")
+    .attr("d", path)
+    .attr("class", "boundary")
+    .style("fill", "none")
+    .style("stroke", "black")
+    .style("stroke-width", "1px");
+});
