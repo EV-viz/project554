@@ -13,7 +13,11 @@ Promise.all([d3.json(washingtonGeoJSONPath), d3.json(pointsDataPath)]).then(
       .attr("width", 960) // Adjust the width as needed
       .attr("height", 600); // Adjust the height as needed
     // Create a Mercator projection centered on Washington state
-    const projection = d3.geoMercator().fitSize([960, 600], geojsonData); // Adjust the width and height
+    const projection = d3
+      .geoMercator()
+      .center([-120.7401, 47.7511]) // Centered on Washington state
+      .scale(5000) // Adjust the scale as needed
+      .translate([480, 300]);
 
     // Create a path generator using the projection
     const path = d3.geoPath().projection(projection);
@@ -26,16 +30,5 @@ Promise.all([d3.json(washingtonGeoJSONPath), d3.json(pointsDataPath)]).then(
       .append("path")
       .attr("d", path)
       .style("fill", "none"); // Adjust the map's fill color
-
-    // Plot the points from the JSON data
-    svg
-      .selectAll("circle")
-      .data(jsonData)
-      .enter()
-      .append("circle")
-      .attr("cx", (d) => projection([d.lon, d.lat])[0])
-      .attr("cy", (d) => projection([d.lon, d.lat])[1])
-      .attr("r", 5) // Adjust the radius of the circles
-      .style("fill", "red"); // Set the color of the circles
   }
 );

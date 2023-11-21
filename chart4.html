@@ -102,13 +102,15 @@
           <div class="container-fluid px-4">
             <h1 class="mt-4">Electric Vehicle Electric Range Distribution</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Detail</li>
+              <li class="breadcrumb-item active">
+                Details of Electric Vehicle Range by different types of EVs
+              </li>
             </ol>
 
             <!-- Chart row  -->
             <div class="row">
               <!-- =========== chart beginning ============== -->
-              <div class="col-xl-6">
+              <div class="col">
                 <div class="card mb-4">
                   <!-- chart title  -->
                   <div class="card-header">
@@ -120,22 +122,26 @@
 
                   <!-- ========== EDIT CHART HERE ================== -->
                   <div class="card-body">
-                    <!-- ### corresponding js file: 
-                      /js/g-bar.js
-                     ###  -->
-                    <svg id="histogramvv"></svg>
-
-                    <div>
-                      <button id="PHEVButton">PHEV</button>
-                      <button id="BEVButton">BEV</button>
-                      <button id="resetButton">Reset</button>
+                    <div class="row d-flex align-items-center">
+                      <svg id="histogramvv"></svg>
+                    </div>
+                    <div class="my-3 d-flex flex-row mx-5">
+                      <button class="btn btn-success mx-1" id="PHEVButton">
+                        PHEV
+                      </button>
+                      <button class="btn btn-primary mx-1" id="BEVButton">
+                        BEV
+                      </button>
+                      <button class="btn btn-danger mx-1" id="resetButton">
+                        Reset
+                      </button>
                     </div>
                   </div>
                   <!-- ============================ -->
                 </div>
               </div>
               <!-- Chart Description -->
-              <div class="col-xl-6 d-flex flex-column px-5">
+              <!-- <div class="col-xl-6 d-flex flex-column px-5">
                 <div class="row">
                   <h2>Description</h2>
                 </div>
@@ -145,7 +151,7 @@
                     purely on its electric charge.
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </main>
