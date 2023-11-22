@@ -5,10 +5,10 @@ Chart.defaults.global.defaultFontColor = "#292b2c";
 
 async function fetchDataPie2() {
   const colorList = [
-    "#28a745",
     "#ffc107",
-    "#007bff",
     "#dc3545",
+    "#007bff",
+    "#28a745",
 
     "gray",
     "lightblue",

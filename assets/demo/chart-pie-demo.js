@@ -3,7 +3,7 @@ Chart.defaults.global.defaultFontFamily =
   '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = "#292b2c";
 
-async function fetchDataPie() {
+async function fetchDataDonut() {
   const colorList = ["#28a745", "#ffc107", "#007bff", "#dc3545"];
 
   let labels = [];
@@ -17,10 +17,10 @@ async function fetchDataPie() {
       dataList.push(item.data);
     });
 
-    // Pie Chart
+    // Donut Chart (Changed 'type' to 'doughnut')
     var ctx = document.getElementById("myPieChart");
     var myPieChart = new Chart(ctx, {
-      type: "pie",
+      type: "doughnut", // Changed type to 'doughnut'
       data: {
         labels: labels, // text label
         datasets: [
@@ -32,6 +32,7 @@ async function fetchDataPie() {
       },
 
       options: {
+        cutoutPercentage: 60, // Adjust the cutout percentage as needed for the donut hole
         tooltips: {
           callbacks: {
             label: function (tooltipItem, data) {
@@ -52,4 +53,4 @@ async function fetchDataPie() {
   }
 }
 
-fetchDataPie();
+fetchDataDonut();

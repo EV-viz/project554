@@ -66,7 +66,7 @@ fetch("./data/EV_Population_TimeSeries_EVType.csv")
                 display: false,
               },
               ticks: {
-                maxTicksLimit: 16,
+                maxTicksLimit: 13,
               },
             },
           ],

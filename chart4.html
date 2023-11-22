@@ -76,7 +76,7 @@
               </a>
               <a class="nav-link" href="chart2.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Line Chart
+                EV Trend
               </a>
               <a class="nav-link" href="chart3.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -84,7 +84,7 @@
               </a>
               <a class="nav-link" href="chart4.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Histogram
+                Electric Range
               </a>
               <a class="nav-link" href="chart5.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -100,32 +100,24 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Electric Vehicle Electric Range Distribution</h1>
+            <h1 class="mt-4">EV Electric Range Distribution</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">
-                Details of Electric Vehicle Range by different types of EVs
-              </li>
+              <li class="breadcrumb-item active">By EV Type</li>
             </ol>
 
             <!-- Chart row  -->
             <div class="row">
               <!-- =========== chart beginning ============== -->
-              <div class="col">
-                <div class="card mb-4">
-                  <!-- chart title  -->
-                  <div class="card-header">
-                    <!-- icon -->
-                    <i class="fas fa-chart-bar me-1"></i>
-                    <!-- title text -->
-                    Histogram
-                  </div>
+              <div class="card mb-4">
+                <!-- chart title  -->
 
-                  <!-- ========== EDIT CHART HERE ================== -->
-                  <div class="card-body">
+                <!-- ========== EDIT CHART HERE ================== -->
+                <div class="card-body row">
+                  <div class="col-xl-8">
                     <div class="row d-flex align-items-center">
                       <svg id="histogramvv"></svg>
                     </div>
-                    <div class="my-3 d-flex flex-row mx-5">
+                    <div class="my-3 mx-5">
                       <button class="btn btn-success mx-1" id="PHEVButton">
                         PHEV
                       </button>
@@ -137,21 +129,23 @@
                       </button>
                     </div>
                   </div>
-                  <!-- ============================ -->
+                  <!-- Chart Description -->
+                  <div class="col">
+                    <div class="row">
+                      <h2>Description</h2>
+                    </div>
+                    <div class="row">
+                      <p class="max-w-sm">
+                        The Electric Range describes how far a vehicle can
+                        travel purely on its electric charge.
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <!-- end card body  ============================-->
+
+                <!-- col -->
               </div>
-              <!-- Chart Description -->
-              <!-- <div class="col-xl-6 d-flex flex-column px-5">
-                <div class="row">
-                  <h2>Description</h2>
-                </div>
-                <div class="row">
-                  <p class="max-w-sm">
-                    The Electric Range describes how far a vehicle can travel
-                    purely on its electric charge.
-                  </p>
-                </div>
-              </div> -->
             </div>
           </div>
         </main>

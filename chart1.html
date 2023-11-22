@@ -10,30 +10,15 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>EV Explorer | Data</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-      rel="stylesheet"
-    />
 
     <link href="css/styles.css" rel="stylesheet" />
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <script src="node_modules/topojson-client/dist/topojson-client.min.js"></script>
     <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -76,7 +61,7 @@
               </a>
               <a class="nav-link" href="chart2.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Line Chart
+                EV Trend
               </a>
               <a class="nav-link" href="chart3.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -84,7 +69,7 @@
               </a>
               <a class="nav-link" href="chart4.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                Histogram
+                Electric Range
               </a>
               <a class="nav-link" href="chart5.html">
                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -100,45 +85,39 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Electric Vehicle Population</h1>
-            <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Detail</li>
-            </ol>
+            <h1 class="mt-4">BEVs VS PHEVs</h1>
+            <div class="breadcrumb">
+              <p class="breadcrumb-item active">
+                Battery electric vehicle (BEVs) are powered entirely by
+                electricity, while Plug-in Hybrid Electric Vehicles (PHEVs) are
+                powered by a fuel-based internal combustion engine, as well as
+                an electric motor with a battery that's rechargeable with an
+                external plug.
+              </p>
+            </div>
 
             <!-- Chart row  -->
             <div class="row">
               <!-- =========== chart beginning ============== -->
-              <div class="col-xl-6">
-                <div class="card mb-4">
-                  <!-- chart title  -->
-                  <div class="card-header">
-                    <!-- icon -->
-                    <i class="fas fa-chart-bar me-1"></i>
-                    <!-- title text -->
-                    Bar Chart Example
-                  </div>
-
-                  <!-- ========== EDIT CHART HERE ================== -->
-                  <div class="card-body">
-                    <!-- ### corresponding js file: 
-                      /js/g-bar.js
-                     ###  -->
+              <div class="card mb-4">
+                <!-- ========== EDIT CHART HERE ================== -->
+                <div class="card-body row">
+                  <div class="col-xl-8">
                     <svg id="barchartvv"></svg>
                   </div>
-                  <!-- ============================ -->
-                </div>
-              </div>
-              <!-- Chart Description -->
-              <div class="col-xl-6 d-flex flex-column px-5">
-                <div class="row">
-                  <h2>Description</h2>
-                </div>
-                <div class="row">
-                  <p class="max-w-sm">
-                    This part is used for description. This part is used for
-                    description. This part is used for description. This part is
-                    used for description. Test Text here.
-                  </p>
+                  <!-- end chart ==========-->
+
+                  <!-- Chart Description -->
+                  <div class="col my-2">
+                    <div class="row">
+                      <h4 class="max-w-sm">Electric vehicle</h4>
+                      <p>
+                        From the chart of EV from 2017 to 2023, it shows a
+                        positive trends at all time. But BEVs has a more
+                        significant increases every year.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

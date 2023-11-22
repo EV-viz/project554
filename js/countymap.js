@@ -17,7 +17,6 @@ Promise.all([
   // Append an SVG element to the body
   const svg = d3.select("#map");
 
-  // Append path for the map background
   svg
     .append("path")
     .datum(data)
@@ -26,15 +25,14 @@ Promise.all([
     .style("stroke", "black")
     .style("stroke-width", "1px");
 
-  // Append paths for county boundaries
-  svg
-    .selectAll(".boundary")
-    .data(data.features)
-    .enter()
-    .append("path")
-    .attr("d", path)
-    .attr("class", "boundary")
-    .style("fill", "none")
-    .style("stroke", "black")
-    .style("stroke-width", "1px");
+  // svg
+  //   .selectAll(".boundary")
+  //   .data(data.features)
+  //   .enter()
+  //   .append("path")
+  //   .attr("d", path)
+  //   .attr("class", "boundary")
+  //   .style("fill", "none")
+  //   .style("stroke", "black")
+  //   .style("stroke-width", "2px");
 });
