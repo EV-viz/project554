@@ -20,7 +20,7 @@
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <script src="node_modules/topojson-client/dist/topojson-client.min.js"></script>
+
     <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -101,9 +101,9 @@
         <main>
           <div class="container-fluid">
             <h1 class="mt-4 mx-4">EV Population Distribution</h1>
-            <ol class="breadcrumb mb-4 mx-4">
-              <li class="breadcrumb-item active">By County</li>
-            </ol>
+            <div class="breadcrumb mb-4 mx-4">
+              <p class="breadcrumb-item active">By County</p>
+            </div>
 
             <!-- Chart row  -->
             <div class="row mx-4 my-4">
@@ -115,12 +115,12 @@
                 style="border: none"
               ></iframe>
               <!-- Chart Description -->
-              <div class="col-xl-8 d-flex flex-column">
+              <div class="col d-flex flex-column">
                 <div class="row my-2">
                   <h2>Insight from the Choropleth</h2>
                 </div>
                 <div class="row">
-                  <p class="max-w-sm">
+                  <p class=" ">
                     As depicted in the Choropleth map, the distribution of
                     electric vehicles across counties in Washington State shows
                     a distinct concentration around the Seattle metropolitan
@@ -131,6 +131,13 @@
                   </p>
                 </div>
               </div>
+            </div>
+            <div class="row mx-4">
+              <table
+                id="datatablesSimple2"
+                class="display"
+                style="width: 100%"
+              ></table>
             </div>
           </div>
         </main>
@@ -150,6 +157,7 @@
     <script src="/js/scripts.js"></script>
     <!--  ### FOR Chart change this file -->
     <script src="/js/chart3.js"></script>
+    <script src="/js/datatables-county.js"></script>
     <!-- ================================= -->
   </body>
 </html>
