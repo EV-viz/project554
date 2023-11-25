@@ -10,7 +10,6 @@
   "author": "",
   "dependencies": {
     "bootstrap": "^5.3.1",
-    "browser-sync": "^2.29.3",
-    "d3": "^7.8.5"
+    "browser-sync": "^2.29.3"
   }
 }
