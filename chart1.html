@@ -16,14 +16,29 @@
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/d3@7"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://d3js.org/d3.v6.js" crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      .ev-line {
+        fill: none;
+        stroke: blue;
+        stroke-width: 2;
+      }
+
+      .non-ev-line {
+        fill: none;
+        stroke: red;
+        stroke-width: 2;
+      }
+
+      .axis {
+        font-size: 12px;
+      }
+    </style>
   </head>
   <!-- ========================== BODY =============================== -->
   <!-- Top Nav bar -->
@@ -88,14 +103,10 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">BEVs VS PHEVs</h1>
+            <h1 class="mt-4">Overview of All Vehicles & EV</h1>
             <div class="breadcrumb">
               <p class="breadcrumb-item active">
-                Battery electric vehicle (BEVs) are powered entirely by
-                electricity, while Plug-in Hybrid Electric Vehicles (PHEVs) are
-                powered by a fuel-based internal combustion engine, as well as
-                an electric motor with a battery that's rechargeable with an
-                external plug.
+                Time Series Data from 2017 to 2023
               </p>
             </div>
 
@@ -105,22 +116,37 @@
               <div class="card mb-4">
                 <!-- ========== EDIT CHART HERE ================== -->
                 <div class="card-body row">
-                  <div class="col-xl-8">
-                    <svg id="barchartvv"></svg>
-                    <script src="/js/scripts.js"></script>
-                    <!--  ### FOR Chart change this file -->
-                    <script src="/js/g-bar.js"></script>
+                  <div class="col-xl-7">
+                    <svg id="ev-chart"></svg>
+                    <svg id="non-ev-chart"></svg>
                   </div>
                   <!-- end chart ==========-->
 
                   <!-- Chart Description -->
                   <div class="col my-2">
                     <div class="row">
-                      <h4 class="max-w-sm">Electric vehicle</h4>
+                      <h4 class="max-w-xs">EV vs Non-EV population</h4>
                       <p>
-                        From the chart of EV from 2017 to 2023, it shows a
-                        positive trends at all time. But BEVs has a more
-                        significant increases every year.
+                        For the past 6 years, The comparison of the overall
+                        trend between Electric Vehicles (EV) and non-Electric
+                        Vehicles (non-EV) based on the provided chart showcases
+                        a noticeable divergence in their growth patterns over
+                        the specified time frame.
+                      </p>
+                      <p>
+                        The EV population displays a consistent upward
+                        trajectory. This upward trend suggests a growing
+                        adoption of EVs, with their usage accelerating notably
+                        over time. The growth follows a steep curve, signaling a
+                        swift expansion and increased acceptance of electric
+                        vehicles during this period.
+                      </p>
+                      <p>
+                        The non-EV population initially increased but showed
+                        fluctuations over time, ultimately decreasing and
+                        dropping below the 2017 level by 2023. In contrast, the
+                        EV population consistently rose, indicating a continuous
+                        and significant growth trend throughout the period.
                       </p>
                     </div>
                   </div>
@@ -142,7 +168,9 @@
       </div>
     </div>
     <!-- ================================= -->
-
+    <script src="/js/scripts.js"></script>
+    <!--  ### FOR Chart change this file -->
+    <script src="/js/chart1.js"></script>
     <!-- ================================= -->
   </body>
 </html>
